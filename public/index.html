@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ludlow Fitness | Home</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="./css/app.css">
+  </head>
+  <body>
+    <div class="athlete"></div>
+    <div class="upper-block"><a href="index.html"><img src="imgs/logo_simple_inverted2.svg" alt="" class="logo-item"></a></div>
+    <div class="bottom-block">
+      <h3><a href=""><i class="icon-facebook-squared"></i></a><i class="icon-phone"></i><a data-toggle="callbackWindow">212-260-9222 <small> Click to get callback</small></a></h3><small>
+        © 2016 Ludlow Fitness
+        100 Delancey Street, New York City, New York</small>
+    </div>
+    <div id="callbackWindow" data-reveal="" data-close-on-click="true" data-animation-in="hinge-in-from-bottom" data-animation-out="hinge-out-from-bottom" class="reveal callout">
+      <h1>Let us call you back!</h1>
+      <!-- <p class='lead'>There are many options for animating modals, check out the Motion UI library to see them all</p>-->
+      <form action="">
+        <input type="text" name="phone" value="" placeholder="Phone number" required="">
+        <input type="text" name="phone" value="" placeholder="Name" class="large">
+        <input type="submit" value="Get callback" class="success expanded large button float-right">
+        <input type="button" value="Close" data-close="" class="secondary expanded large button float-right">
+      </form>
+      <button data-close="" aria-label="Close reveal" type="button" class="large close-button"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="container"><a data-toggle="mobileSidebar" class="menu-toggler menu-icon">
+        <div style="margin-top:1rem; text-align:center;" class="title">menu</div></a>
+      <!-- <button class="menu-icon" type="button" data-toggle></button>-->
+      <div id="mobileSidebar" data-close-on-click="true" data-reveal="" data-toggler="" data-animation-in="hinge-in-from-left" data-animation-out="hinge-out-from-left" class="reval">
+        <nav>
+          <ul class="lead">
+                      <li class="active"><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="shedule.html">Shedule</a></li>
+                      <li><a href="staff.html">Staff</a></li>
+                      <li><a href="register.html">Register</a></li>
+                      <li><a href="press.html">Press</a></li>
+                      <li><a href="careers.html">Careers</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav><a data-close="" class="close-menu">
+          <h1 class="lead">X</h1>
+          <h4>close</h4></a>
+        <!-- <button type="button" name="button" data-close>Close</button>-->
+        <!--
+        <button class="large close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        -->
+      </div>
+      <div class="sidebar">
+        <nav>
+          <ul class="lead">
+                      <li class="active"><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="shedule.html">Shedule</a></li>
+                      <li><a href="staff.html">Staff</a></li>
+                      <li><a href="register.html">Register</a></li>
+                      <li><a href="press.html">Press</a></li>
+                      <li><a href="careers.html">Careers</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="textblock">
+          <div class="vcon">
+            <div class="video-grid">
+              <video id="fvideo-id" autoplay="" poster="./imgs/novideo-gray2.pn" loop="" class="fitness-video">
+                <!-- <source src="media/fitness_new_2.mp4" type="video/mp4"></source>-->
+              </video>
+            </div>
+            <div>
+              <h3>100 Delancy Street, Northeast Corner of Ludlow and Delancey</h3>
+              <h3><i class="icon-phone">212-260-9222<a href="mailto:info@ludlowfitness.com"> info@ludlowfitness.com</a></i></h3>
+              <h5>Hours: Mon. open @ 5:30am, 24 HOURS ALL WEEK&nbsp;&mdash;&nbsp;Sat. close @ 9:00pm, Sun.&nbsp;8:00am&nbsp;&mdash;&nbsp;9:00pm</h5>
+              <div class="saleblock"><a href="register.html"><img src="imgs/sale.gif" class="saleimg"></a>
+                <div>
+                  <h6><small><span class="gold">LIMITED TIME OFFER!!! <br></span><span class="gold">ONE YEAR FOR ONLY $469 <br></span>FIRST 50 NEW MEMBERS ONLY <br>
+                      CLICK ON LINK <br>
+                      AND REGISTER TODAY!! <br></small></h6>
+                </div>
+              </div>
+            </div>
+            <script>
+              window.addEventListener("beforeunload", function(e){
+                  $("#fvideo-id").remove();
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+      <div class="empty-column"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/foundation.js"></script>
+    <script>
+      $(document).foundation();
+      if (Foundation.MediaQuery.atLeast('large')) {
+      $(".fitness-video").append('<source src="media/fitness_new_curves.mp4" type="video/mp4"></source>');
+      }
+    </script>
+  </body>
+</html>

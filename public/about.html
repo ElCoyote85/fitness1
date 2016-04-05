@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ludlow Fitness | About Us</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="./css/app.css">
+  </head>
+  <body>
+    <div class="athlete"></div>
+    <div class="upper-block"><a href="index.html"><img src="imgs/logo_simple_inverted2.svg" alt="" class="logo-item"></a></div>
+    <div class="bottom-block">
+      <h3><a href=""><i class="icon-facebook-squared"></i></a><i class="icon-phone"></i><a data-toggle="callbackWindow">212-260-9222 <small> Click to get callback</small></a></h3><small>
+        © 2016 Ludlow Fitness
+        100 Delancey Street, New York City, New York</small>
+    </div>
+    <div id="callbackWindow" data-reveal="" data-close-on-click="true" data-animation-in="hinge-in-from-bottom" data-animation-out="hinge-out-from-bottom" class="reveal callout">
+      <h1>Let us call you back!</h1>
+      <!-- <p class='lead'>There are many options for animating modals, check out the Motion UI library to see them all</p>-->
+      <form action="">
+        <input type="text" name="phone" value="" placeholder="Phone number" required="">
+        <input type="text" name="phone" value="" placeholder="Name" class="large">
+        <input type="submit" value="Get callback" class="success expanded large button float-right">
+        <input type="button" value="Close" data-close="" class="secondary expanded large button float-right">
+      </form>
+      <button data-close="" aria-label="Close reveal" type="button" class="large close-button"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="container"><a data-toggle="mobileSidebar" class="menu-toggler menu-icon">
+        <div style="margin-top:1rem; text-align:center;" class="title">menu</div></a>
+      <!-- <button class="menu-icon" type="button" data-toggle></button>-->
+      <div id="mobileSidebar" data-close-on-click="true" data-reveal="" data-toggler="" data-animation-in="hinge-in-from-left" data-animation-out="hinge-out-from-left" class="reval">
+        <nav>
+          <ul class="lead">
+                      <li><a href="index.html">Home</a></li>
+                      <li class="active"><a href="about.html">About Us</a></li>
+                      <li><a href="shedule.html">Shedule</a></li>
+                      <li><a href="staff.html">Staff</a></li>
+                      <li><a href="register.html">Register</a></li>
+                      <li><a href="press.html">Press</a></li>
+                      <li><a href="careers.html">Careers</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav><a data-close="" class="close-menu">
+          <h1 class="lead">X</h1>
+          <h4>close</h4></a>
+        <!-- <button type="button" name="button" data-close>Close</button>-->
+        <!--
+        <button class="large close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        -->
+      </div>
+      <div class="sidebar">
+        <nav>
+          <ul class="lead">
+                      <li><a href="index.html">Home</a></li>
+                      <li class="active"><a href="about.html">About Us</a></li>
+                      <li><a href="shedule.html">Shedule</a></li>
+                      <li><a href="staff.html">Staff</a></li>
+                      <li><a href="register.html">Register</a></li>
+                      <li><a href="press.html">Press</a></li>
+                      <li><a href="careers.html">Careers</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="content">
+        <div class="textblock">
+          <h1>About Us</h1>
+          <p>Welcome to the first Lower East Side neighborhood gym... Ludlow Fitness!</p>
+          <p>We pride ourselves in being a full service fitness facility that strives for three main goals:</p>
+          <div>
+            <ul>
+              <li>Outstanding state of the art equipment</li>
+              <li>Clean workout environment</li>
+              <li>Value driven pricing</li>
+            </ul>
+          </div>
+          <p>Our caring, warm staff and experienced personal trainers are always available to assist you with any questions. You have several workout options to get your heart rate up and achieve your health goals. We offer state of the art cardio equipment with each piece having its own dedicated DirecTV monitor integrated into the LCD screen; dynamic daily classes which include: Yoga, Pilates, Boxing, Body Sculpt; free weights and strength equipment to hit all your upper and lower body parts.</p>
+          <p>We are excited to meet your fitness needs and will put forth a tremendous effort to make your experience a rewarding one.</p>
+          <div class="row align-center">
+            <div class="small-12 medium-8 columns">
+              <div data-toggler data-animate="spin-in" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" class="orbit">
+                <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span> &#9664;&#xFE0E;</button>
+                <button class="orbit-next"><span class="show-for-sr">Next Slide</span> &#9654;&#xFE0E;</button>
+                <li class="orbit-slide"><img src="images/about1.jpg" class="orbit-image"></li>
+                <li class="orbit-slide"><img src="images/about2.jpg" class="orbit-image"></li>
+                <li class="orbit-slide"><img src="images/about3.jpg" class="orbit-image"></li>
+                <li class="orbit-slide"><img src="images/about4.jpg" class="orbit-image"></li>
+                <li class="orbit-slide"><img src="images/about5.jpg" class="orbit-image"></li>
+                <li class="orbit-slide"><img src="images/about6.jpg" class="orbit-image"></li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="empty-column"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/foundation.js"></script>
+    <script>
+      $(document).foundation();
+      if (Foundation.MediaQuery.atLeast('large')) {
+      $(".fitness-video").append('<source src="media/fitness_new_curves.mp4" type="video/mp4"></source>');
+      }
+    </script>
+  </body>
+</html>

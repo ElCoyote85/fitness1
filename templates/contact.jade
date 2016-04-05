@@ -1,0 +1,46 @@
+block vars
+    - title_ext = 'Contact Us'
+    - page = "contact"
+extends layouts/_layout
+
+block content
+  h1.contact= title_ext
+  form(action="")
+    .row.align-left
+      .small-12.large-5.columns
+          input(type='text' placeholder="Name")
+      .small-12.large-7.columns
+            input(type='email' placeholder="Email")
+    .row
+      .large-12.columns
+          textarea(placeholder="Questions/Comments" rows=3)
+    .row
+       large-12.columns 
+         input.button(type="submit" value="Send")  
+        
+        
+  .row
+    .small-12.large-5.columns
+      h3.light-gold Ludlow Fitness
+      p 100 Delancey Street <br>
+        |(Northeast corner of Ludlow and Delancey) <br>
+        |New York, New York 10002 <br>
+        |212-260-9222 
+
+    .small-12-large-7.columns
+      h3.light-gold Email Directory:
+      p Mason Goldberg, Owner #[a(href="mailto:mason@ludlowfitness.com")= "<mason@ludlowfitness.com>"] <br>
+        |General Inquiries #[a(href="mailto:info@ludlowfitness.com")= "<info@ludlowfitness.com>"] <br>
+        |Registration #[a(href="mailto:registration@ludlowfitness.com")= "<registration@ludlowfitness.com>"] <br>
+        |Personal Training #[a(href="mailto:personaltraining@ludlowfitness.com")= "<personaltraining@ludlowfitness.com>"] <br>
+        |Career Inquiries #[a(href="mailto:careers@ludlowfitness.com")= "<careers@ludlowfitness.com>"] <br>
+        |Press Inquiries #[a(href="mailto:press@ludlowfitness.com")= "<press@ludlowfitness.com>"]
+  .row
+    .small-12.columns.align-center
+      h3.light-gold Operating Hours: <br>
+      p Mon. open at 5:30am, OPEN 24 HOURS ALL WEEK 
+        |Sat. close at 9:00pm 
+        |Sun. 8:00am - 9:00pm
+  .row
+    .small-12.columns
+      div#map

@@ -1,0 +1,33 @@
+block vars
+    - title_ext = 'About Us'
+    - page = "about"
+extends layouts/_layout
+
+block content
+  h1= title_ext
+  p Welcome to the first Lower East Side neighborhood gym... Ludlow Fitness!
+  p We pride ourselves in being a full service fitness facility that strives for three main goals:
+  div
+    ul
+      li Outstanding state of the art equipment
+      li Clean workout environment
+      li Value driven pricing
+  p Our caring, warm staff and experienced personal trainers are always available to assist you with any questions. You have several workout options to get your heart rate up and achieve your health goals. We offer state of the art cardio equipment with each piece having its own dedicated DirecTV monitor integrated into the LCD screen; dynamic daily classes which include: Yoga, Pilates, Boxing, Body Sculpt; free weights and strength equipment to hit all your upper and lower body parts.
+  p We are excited to meet your fitness needs and will put forth a tremendous effort to make your experience a rewarding one.
+  .row.align-center
+    .small-12.medium-8.columns
+      .orbit(data-toggler data-animate="spin-in" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;")
+        button.orbit-previous #[span.show-for-sr Previous Slide] &#9664;&#xFE0E;
+        button.orbit-next #[span.show-for-sr Next Slide] &#9654;&#xFE0E;
+        li.orbit-slide
+          img.orbit-image(src="images/about1.jpg")
+        li.orbit-slide
+          img.orbit-image(src="images/about2.jpg")
+        li.orbit-slide
+          img.orbit-image(src="images/about3.jpg")
+        li.orbit-slide
+          img.orbit-image(src="images/about4.jpg")
+        li.orbit-slide
+          img.orbit-image(src="images/about5.jpg")
+        li.orbit-slide
+          img.orbit-image(src="images/about6.jpg")

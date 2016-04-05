@@ -1,0 +1,14 @@
+
+// $mycolors: (
+//     $yellow: desaturate(yellow, 30%),
+//     $red: desaturate(red, 30%),
+//     $blue: desaturate(blue, 30%)
+// );
+
+.gold {
+color: gold;
+}
+
+.light-gold {
+    color: $light-gold;
+}

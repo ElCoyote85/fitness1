@@ -1,0 +1,202 @@
+// @import "foundation/settings";
+@import "fsettings";
+@import "motion-ui";
+@import "foundation";
+@import "colors";
+
+
+@include foundation-everything($flex: true);
+
+
+@import "body";
+@import "blocks";
+@import "menu";
+
+// Main
+.container {
+    @include breakpoint(xlarge up) { @include flex-grid-row($width: 100rem, $columns: 5); }
+    @include breakpoint(xlarge down) { @include flex-grid-row($width: 100rem, $columns: 6); }
+    height: 100%;
+    margin: 0 auto;
+}
+@keyframes navitem-flash {
+    0% {
+        opacity: 0.6
+    }
+    20% {
+        opacity: 0.7;
+    }
+    60% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+
+
+@keyframes video-hue {
+    from {
+        filter: hue-rotate(180deg);
+    }
+    to {
+        filter: hue-rotate(50deg);
+    }
+}
+.content {
+    @include breakpoint(xlarge down) { @include flex-grid-column(4 of 6); };
+    @include breakpoint(medium down) { 
+        @include flex-grid-column(5.5 of 6); 
+        /*@include grid-column-offset(0.1);*/
+        // font-size: rem-calc(2.3rem);
+        }
+    @include breakpoint(xxlarge up) { @include flex-grid-column(3 of 5); };
+    @include flex-grid-row();
+    @include flex-grid-column();
+    @include flex-align(left, middle);
+    height: 100%;
+    overflow: hidden;
+    .textblock {
+        // @include flex-grid-row($behavior: collapse );
+        // h1 {
+        //     @include flex-grid-column(1 of 1, $gutter: 0);
+        // }
+        // @include flex-grid-column();
+        @include breakpoint(large up){
+            p { margin-right: 50px !important;}
+        };
+        @include breakpoint(xlarge up){
+            // min-width: 64rem;
+        }
+        @include breakpoint(large down){
+            // TODO: Width of textblock
+            // p, h4 {
+            //     width: 30rem;
+            // }
+            width: 61rem;
+            padding-bottom: 10rem;
+            // font-size: 1.5rem;
+            ul {
+                font-size: rem-calc(1.6rem);
+            }
+        }
+        position: relative;
+        overflow-y: scroll;
+        height: 90%;
+        width: 100%;
+        padding: 5rem 60px 1rem 0;
+        margin-right: -40px;
+        right: -2rem;
+        // background-color: rgba(black, 0.2);
+        background-image: linear-gradient(to right, rgba(black, 0.0), rgba(black, 0.4) 5%, rgba(black, 0.4) 90%, rgba(black, 0));
+        color: $medium-gray;
+        // color: $black;;
+        .saleblock {
+            @include flex-grid-row;
+            @include flex-align(spaced, middle);
+            @keyframes sale-img{
+                0% { transform: scale(0.9); }
+                80% { transform: scale(0.9); }
+                90% { transform: scale(1.1); }
+                100% { transform: scale(1); }
+            }
+            // @keyframes saleimg-flick {
+            //     from {opacity: 0.9}
+            //     to {opacity: 1}
+            // }
+            .saleimg {
+                animation: sale-img 5s ease-in-out;
+                // animation: saleimg-flick 5s ease-in-out infinite alternate;
+                transition: 0.5s;
+                &:hover {
+                    transform: scale(1.1);
+                    transition: 0.3s;
+                }
+            }
+        }
+        .fitness-video {
+            @include breakpoint(medium down) {
+                // display: none;
+                margin-top: 3rem;
+                // height: 50%;
+                // width: 75%;
+                
+                // background-size: 100% 100%;
+                // background-repeat: no-repeat;
+                // margin-bottom: 20rem;
+                padding-bottom: 0;
+            }
+            width: 93%;
+            margin: -10% auto;
+
+            // mask: url(../imgs.mask.svg) top left / cover;
+            // filter: hue-rotate(180deg);
+            // animation: video-hue 8s ease-in-out infinite alternate;
+        }
+        .vcon {
+            position: relative;
+            text-align: center;
+            margin-bottom: 0.2rem;
+            top: -5rem;
+
+            .video-grid {
+                pointer-events: none;
+                position: relative;;
+                content: "";
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 120%;
+                margin: 0 auto;
+                // @include breakpoint(medium down) {
+                //     position: relative;
+                //     width: 100%;
+                //     height: 50%;
+                //     // top: 80%;
+                //     background-image: url(../imgs/novideo.jpg);
+                //     background-repeat: no-repeat;
+                // }
+                // -webkit-mask-box-image: url(../imgs/mask.svg);
+                // mask: url(../imgs/mask.svg) top left / cover;
+                mask: url(../imgs/mask.svg) 50% 90%/100% no-repeat;
+                &:before {
+                    pointer-events: none;
+                    position: absolute;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url("../imgs/black-criss-cross.png");
+                    background-image: url("../imgs/black-zig-zag.png");
+                    background-image: url("../imgs/black-horizontal-lines.png");
+                }
+                // background-size: 100% 100%;
+                // background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+
+
+@include breakpoint(xxlarge up) {
+    .empty-column {
+        @include flex-grid-column(1 of 5);
+        @include flex-grid-row();
+        @include flex-align(left, bottom);
+        height: 100%;
+        width: 100%;
+        background-image: url("../imgs/Fog05.png");
+        background-size: 100% 256px;
+        // opacity: 0.8;
+        // animation: smoke 10s linear infinite;
+        transform: translateX(-170px);
+        pointer-events: none;
+    }
+} 
+@include breakpoint(xlarge down)  { .empty-column {display: none;} }
+ 
+
+@import "ext";

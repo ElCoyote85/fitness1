@@ -1,0 +1,29 @@
+block vars
+    - title_ext = 'Home'
+    - page = "index"
+extends layouts/_layout
+ 
+block content
+  .vcon
+    .video-grid
+      video#fvideo-id.fitness-video(autoplay='', poster='./imgs/novideo-gray2.pn', loop='')
+        // <source src="media/fitness_new_2.mp4" type="video/mp4"></source>
+    div
+      h3 100 Delancy Street, Northeast Corner of Ludlow and Delancey
+      h3: i.icon-phone 212-260-9222
+        a(href="mailto:info@ludlowfitness.com")  info@ludlowfitness.com
+      h5 Hours: Mon. open @ 5:30am, 24 HOURS ALL WEEK&nbsp;&mdash;&nbsp;Sat. close @ 9:00pm, Sun.&nbsp;8:00am&nbsp;&mdash;&nbsp;9:00pm
+      div.saleblock
+        a(href="register.html")
+          img.saleimg(src="imgs/sale.gif")
+        div
+          h6: small
+            span.gold LIMITED TIME OFFER!!! <br>
+            span.gold ONE YEAR FOR ONLY $469 <br>
+            |FIRST 50 NEW MEMBERS ONLY <br>
+            |CLICK ON LINK <br>
+            |AND REGISTER TODAY!! <br>
+    script.
+        window.addEventListener("beforeunload", function(e){
+            $("#fvideo-id").remove();
+        });

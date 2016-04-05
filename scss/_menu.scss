@@ -1,0 +1,176 @@
+// Sidebar, Menu
+@keyframes smoke {
+    to {
+        background-position-y: 0px;
+    }
+    to {
+        background-position-y: -256px;
+    }
+}
+.sidebar {
+    // @include breakpoint(xlarge up) {
+    //     @include flex-grid-column(1 of 5, $gutter: 0.02rem);
+    // };
+
+
+    @include breakpoint(xxlarge up) {
+        @include flex-grid-column(1 of 5, $gutter: 0.02rem);
+        // @include flex-grid-row(100%, $gutter: 0.01rem);
+        height: 100%;
+        // display: flex;
+    };
+    @include breakpoint(xlarge down) {
+        @include flex-grid-column(2 of 6, $gutter: 0.02rem);
+        // @include flex-grid-row(100%, $gutter: 0.01rem);
+        height: 100%;
+        // display: flex;
+    };
+    @include breakpoint(medium down) {
+        // @include flex-grid-column(2 of 6, $gutter: 0.02rem);
+        // height: 100%;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // height: 100%;
+        // width: 25rem;
+        // background: rgba(black, 0.8);
+        display: none;
+    };
+    // @include breakpoint(small down) {
+    //     display: none;
+    // };
+
+    // @include breakpoint(medium down) { width: 20rem; }
+
+    @include flex-grid-row(100%, $gutter: 0.01rem);
+    @include flex-align(right, middle);
+
+    padding-right: 0;
+    position: relative;
+    // background: rgba(255,255,255,0.1);
+    background-image: linear-gradient(to right, rgba(black, 0), rgba(white, 0.1));
+    border-right: 5px solid rgba(red, 0.3);
+    @include breakpoint(medium up) {
+        &:before {
+            content: "";
+            position: absolute;;
+            left: 30%;
+            top: 0;
+            height: 100%;
+            width: 90%;
+            background-image: url("../imgs/Fog05.png");
+            background-size: 100% 256px;
+            opacity: 0.8;
+            // animation: smoke 10s linear infinite;
+            pointer-events: none;
+            // z-index: -100;
+        }
+    }
+    nav {
+        @include flex-align(right, middle);
+        color: white;
+        @include breakpoint(large up) {font-size: 1.8rem;};
+        @include breakpoint(large down) {font-size: 1.5rem; line-height: 2rem;};
+        ul {
+            @include menu-base();
+            @include menu-direction(vertical);
+            li {
+                text-align: right;
+                &.active {
+                    background-image: linear-gradient(to right, rgba(black,0), rgba(red, 0.1));
+                }
+
+                a {
+                    transform: scale(1);
+                    transition: 0.5s;
+                    &:hover {
+                        transform: scale(1.1) translateX(-3%);
+                        transition: 0.3s;
+                        animation: navitem-flash 600ms linear infinite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.menu-toggler {
+    height: 10rem;
+    width: 5rem;
+    // background-color: yellow;
+    position: fixed;
+    left: 1rem;
+    top: 5rem;
+    height: 5rem;
+    z-index: 1000;
+    @include breakpoint(large up) {
+        display: none;
+    };
+}
+
+#mobileSidebar {
+    // @include breakpoint(large up) {
+    //     display: none;
+    // }
+    .close-menu {
+        width: 10rem;
+        height: 10rem;
+        background-color: rgba(lighten(black, 10%), 1);
+        color: desaturate(gray, 80%);
+        border: 1px dotted desaturate(gray, 80%);
+        position: absolute;
+        left: 2rem;
+        top: 2rem;
+        // text-align: center;
+        font-size: 150%;
+        @include flex-grid-row;
+        flex-direction: column;
+        @include flex-align(center, middle);
+        border-radius: 10px;
+    }
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    // height: 90%;
+    // width:40rem;
+    width: 90%;
+    @include flex-grid-row();
+    @include flex-grid-column();
+    display: none;;
+    @include breakpoint(large up) {
+        display: none;
+    }
+    @include flex-align(center, middle);
+    height: 100%;
+    nav {
+        @include flex-align(center, middle);
+        color: white;
+        background-color: rgba(black, 0.9);
+        font-size: 1.6rem;
+        // line-height: 1.8rem;
+        height: 90%;
+        ul {
+            @include menu-base();
+            @include menu-direction(vertical);
+            height: 100%;
+            li {
+                text-align: right;;
+                // a {color: darken(white, 30%);}
+                &.active {
+                    background-image: linear-gradient(to right, rgba(black,0), rgba(red, 0.1));
+                }
+
+                // a {
+                //     transform: scale(1);
+                //     transition: 0.5s;
+                //     &:hover {
+                //         transform: scale(1.1) translateX(-3%);
+                //         transition: 0.3s;
+                //         animation: navitem-flash 600ms linear infinite;
+                //     }
+                // }
+            }
+        }
+    }
+}

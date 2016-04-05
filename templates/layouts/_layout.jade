@@ -1,0 +1,126 @@
+-
+    menu = { 
+        index: "Home",
+        about: "About Us",
+        shedule: "Shedule",
+        staff: "Staff",
+        register: "Register",
+        press: "Press",
+        careers: "Careers",
+        contact: "Contact Us"
+        }
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    
+    block vars
+    title Ludlow Fitness | #{title_ext}
+    link(rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32")
+    link(rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16")    
+    link(rel='stylesheet', href='./css/app.css')
+  body
+    .athlete
+    .upper-block
+      a(href='index.html')
+        img.logo-item(src='imgs/logo_simple_inverted2.svg', alt='')
+    .bottom-block
+      h3
+        a(href='')
+          i.icon-facebook-squared
+        i.icon-phone
+        a(data-toggle='callbackWindow')
+          | 212-260-9222 
+          small  Click to get callback
+      small
+        | © 2016 Ludlow Fitness
+        | 100 Delancey Street, New York City, New York
+        
+        
+    #callbackWindow.reveal.callout(data-reveal='', data-close-on-click='true', data-animation-in='hinge-in-from-bottom', data-animation-out='hinge-out-from-bottom')
+      h1 Let us call you back!
+      // <p class='lead'>There are many options for animating modals, check out the Motion UI library to see them all</p>
+      form(action='')
+        input(type='text', name='phone', value='', placeholder='Phone number', required='')
+        input.large(type='text', name='phone', value='', placeholder='Name')
+        input.success.expanded.large.button.float-right(type='submit', value='Get callback')
+        input.secondary.expanded.large.button.float-right(type='button', value='Close', data-close='')
+      button.large.close-button(data-close='', aria-label='Close reveal', type='button')
+        span(aria-hidden='true') ×
+    .container
+      a.menu-toggler.menu-icon(data-toggle='mobileSidebar')
+        .title(style='margin-top:1rem; text-align:center;') menu
+      // <button class="menu-icon" type="button" data-toggle></button>
+      #mobileSidebar.reval(data-close-on-click='true', data-reveal='', data-toggler='', data-animation-in='hinge-in-from-left', data-animation-out='hinge-out-from-left')
+        nav
+          mixin menu_items
+            each pagetitle, key in menu
+                if key === page
+                    li.active: a(href = key+".html" )= pagetitle
+                else
+                    li: a(href = key + ".html")= pagetitle
+          ul.lead
+            +menu_items
+                        
+
+        a.close-menu(data-close='')
+          h1.lead X
+          h4 close
+        // <button type="button" name="button" data-close>Close</button>
+        //
+          <button class="large close-button" data-close aria-label="Close reveal" type="button">
+          <span aria-hidden="true">&times;</span>
+          </button>
+      .sidebar
+        nav
+          ul.lead
+            +menu_items
+      .content
+        .textblock
+          block content
+      .empty-column
+    if page === "contact"
+        script(src="https://maps.googleapis.com/maps/api/js?sensor=false")
+        script.
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 17,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(40.719121, -73.988633), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+
+
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>40.719125, -73.988632
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(40.719121, -73.988633),
+                    map: map,
+                    title: 'Snazzy!'
+                });
+            }
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+    script(src='js/foundation.js')
+    script.
+      $(document).foundation();
+      if (Foundation.MediaQuery.atLeast('large')) {
+      $(".fitness-video").append('<source src="media/fitness_new_curves.mp4" type="video/mp4"></source>');
+      }
